@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "83910224-5d26-4117-bd72-ba95de0ee727",
+		"name": "Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31850858",
+		"_collection_link": "https://galactic-meteor-797381.postman.co/workspace/My-Workspace~a1671596-2667-4067-8f42-2ef79c48c4fe/collection/31850858-83910224-5d26-4117-bd72-ba95de0ee727?action=share&source=collection_link&creator=31850858"
+	},
+	"item": [
+		{
+			"name": "store product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sample Product\",\r\n    \"price\": 100.00,\r\n    \"description\": \"This is a sample product description.\",\r\n    \"quantity\": 50,\r\n    \"attribute_name\": [\"Color\", \"Size\"],\r\n    \"attribute_value\": [\r\n        [\"Blue\", \"Green\"],\r\n        [\"Small\", \"large\"]\r\n    ],\r\n    \"attribute_price\": [0,110]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://taskproduct.test/api/product-store",
+					"protocol": "http",
+					"host": [
+						"taskproduct",
+						"test"
+					],
+					"path": [
+						"api",
+						"product-store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add to cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_id\": 1,\r\n    \"attribute_id\": 1,\r\n    \"attribute_value_id\": 1,\r\n    \"quantity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://taskproduct.test/api/add-to-cart",
+					"protocol": "http",
+					"host": [
+						"taskproduct",
+						"test"
+					],
+					"path": [
+						"api",
+						"add-to-cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"couponCode\": \"FREESHIP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://taskproduct.test/api/checkout/1",
+					"protocol": "http",
+					"host": [
+						"taskproduct",
+						"test"
+					],
+					"path": [
+						"api",
+						"checkout",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://taskproduct.test/api/products",
+					"protocol": "http",
+					"host": [
+						"taskproduct",
+						"test"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
